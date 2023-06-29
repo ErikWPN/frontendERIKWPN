@@ -1,0 +1,254 @@
+
+    html {
+        font-size:  62.5%;
+    }
+
+    body {
+        background-color: #f5f5f5;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .main-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .container {
+        display: block;
+        float: left;
+        margin: 0 1%;
+        padding: 0;
+        width: 98%;
+        max-width: 1198px;
+    }
+
+    header {
+        background: #ffffff;
+        display: block;
+        float: left;
+        padding: 20px 0;
+        width: 100%;
+        border-bottom: 1px solid #254159;
+    }
+
+    h1{
+        font-size: 2.4rem;
+        color: #254159;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: #254159;
+        margin-bottom: 20px;
+    }
+
+    h3{
+        font-size: 1.8rem;
+        color: #324658;
+        margin-bottom: 10px;
+    }
+
+    h4{
+        font-size: 1.6rem;
+        color: #324658;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+        line-height: 1.2;
+        color: #565656;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #tenho-interesse {
+        background-color: #c2cbd3;
+        width: 100%;
+    }
+
+    #tenho-interesse form,
+    .cognito.c-med .c-forms-form,
+    .cognito.c-med .c-forms-form div {
+        background-color: #c2cbd3 !important;
+    }
+
+    #tenho-interesse form, .cog-cognito .cog-form .cog-1 .is-default .cog-cognito--styled .cog-form--light-background .cog-cognito--protect-css{
+        background-color: #c2cbd3 !important;
+        --form__background-color: #c2cbd3 !important;
+    }
+
+    ol {
+        margin-left: 30px;
+    }
+
+    ol li {
+        font-size: 1.4rem;
+        color: #454545;
+    }
+
+    section {
+        background-color: #fff;
+        display: block;
+        float: left;
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    section nav {
+        display: block;
+        float: left;   
+        width: 30%;
+    }
+
+    nav li {
+        background-color: #cfcfcf;
+        margin: 1px 20px 1px 0;
+        padding: 10px;
+    }
+
+    nav li:hover {
+        background-color: #9e9e9e;
+    }
+
+    nav a {
+        text-decoration: nome;
+        color: #254174;
+    }
+
+    section article {
+        
+        display: block;
+        float: left;
+        width: 70%;
+    }
+
+    footer {
+        background-color:#324658;
+        display: block;
+        float: left;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    footer p {
+        color: #fff;
+        font-size: 1.4rem;
+    }
+
+    footer small {
+        font-size: 80%;
+        display: block;
+    }
+
+    .cognito {
+        height: 350px !important;
+        overflow: hidden !important;
+    }
+
+    @media (max-width: 425px) {
+        section nav,
+        section article {
+            width: 100%;
+        }
+    }
+
+        .container{
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+
+    #bunner {
+        background-image: url("../images/banner.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 60vh;
+    }
+
+    .legenda-container {
+        width: 30vw;
+        float: right;
+        margin: 10vh 10vh 0 0;
+        
+    }
+
+    .legenda {
+        background-color: rgba(255, 255, 255, .6);
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+    }
+
+    .legenda h5,
+    .legenda h4 {
+        color: #254159;
+        line-height: 150%;
+    }
+
+    .button-cta {
+        border-radius: 25px;
+        display: inline;
+        background-color: orangered;
+        color: white;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        box-shadow: 1px 1px 4px #454545;
+        padding: 10px 15px;
+        width: auto;
+        text-decoration: none;
+        font-weight: 300;
+        float: right;
+    }
+
+    .button-cta-2 {
+        border-radius: 25px;
+        display: inline;
+        background-color: orangered;
+        color: white;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        box-shadow: 1px 1px 4px #454545;
+        padding: 10px 15px;
+        width: auto;
+        text-decoration: none;
+        font-weight: 300;
+        float: left;
+    }
+
+    #saiba-mais {
+        background-color: #eaeff3;
+        padding: 40px 0;
+    }
+
+    #saiba-mais p,
+    #saiba-mais img {
+        width: 45%;
+        display: block;
+        float: left;
+        padding: 20px;
+    }
+
+    dl {
+        margin: 20px 0;
+    }
+
+    dt {
+        font-weight: 300;
+        font-size: 1.6rem;
+    }
+
+    dd {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
