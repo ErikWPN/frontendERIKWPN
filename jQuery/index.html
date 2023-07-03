@@ -153,11 +153,9 @@
                 <div class="col-md-12">
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">How It Works ?</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#top">Home</a></li>
+                            <li><a href="#produtos">Help</a></li>
+                            <li><a href="#sobre" rel="sobre" class="nav-modal-open">Sobre</a></li>
                         </ul>
                     </div>
                 </div>
@@ -188,8 +186,8 @@
         </div>
 
         <!-- Modal Body -->
-        <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTitleId">Modal title</h5>
@@ -201,17 +199,42 @@
             </div>
         </div>
 
-        <div id="contato" class="visually-hidden">
-            <form action="post" class="form">
-                <div class="mb-3">
-                  <label for="nome" class="form-label">Nome</label>
-                  <input type="text" name="nome" id="nome" class="form-control" placeholder="Dgite seu nome" aria-describedby="helpNome">
-                  <small id="helpId" class="text-muted">Digite um Nome válido</small>
-                </div>
-                <div class="mb-3">
+            <div id="contato" class="visually-hidden">
+                <form action="post" class="form">
+                  <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Dgite seu nome" aria-describedby="helpNome">
+                    <small id="helpId" class="text-muted">Digite um Nome válido</small>
+                  </div>
+                    <div class="mb-3">
                     <label for="e-mail" class="form-label">Email</label>
                     <input type="text" name="e-mail" id="e-mail" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
                     <small id="helpId" class="text-muted">Digite um Email válido</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="date" class="form-label">Data</label>
+                    <input type="text" name="date" id="date" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
+                    <small id="helpId" class="text-muted">Insira um tempo valido</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="hora" class="form-label">Hora</label>
+                    <input type="text" name="hora" id="hora" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
+                    <small id="helpId" class="text-muted">Digite um Tempo válido</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" name="cep" id="cep" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
+                    <small id="helpId" class="text-muted">Digite seu CEP</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cel" class="form-label">CELULAR</label>
+                    <input type="text" name="cel" id="e-mail" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
+                    <small id="helpId" class="text-muted">Digite o numero para contato</small>
+                  </div>
+                  <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Dgite seu e-mail" aria-describedby="helpEmail">
+                    <small id="helpId" class="text-muted">Digite um CPF válido</small>
                   </div>
 
                   <button type="submit" class="btn btn-primery">Enviar</button>
@@ -225,16 +248,11 @@
 
         </div>
         
-        
-        <!-- Optional: Place to the bottom of scripts -->
-        <script>
-            const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-        
-        </script>
-        
         <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="./vendor/owl/js/owl.js"></script>
+        <script src="./vendor/jquerymask/jquery.mask.min.js"></script>
+        <script src="./vendor/jqueryUI/jquery-ui.min.js"></script>
         <script src="./js/custom.js"></script>
     </body>
     </html>

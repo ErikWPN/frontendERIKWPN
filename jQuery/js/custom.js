@@ -12,6 +12,8 @@ $(document).ready(function(){
 
     console.log(titulso.first());
 });
+
+
     // Configuração de produtos!
 
     //$('.featured-item a').addClass('btn btn-dark stretch-link');
@@ -20,80 +22,141 @@ $(document).ready(function(){
 
 
 
-    $('featued-item:first h4').dblclick( function(){
+        $('featued-item:first h4').dblclick( function(){
 
-        $(this).css({
-            'color' : '#f00',
-            'background' : '#ff0',
-            'font-weight' : '100',
-        });
-  
-});
-/*
- * Manipulação de eventos
- */
-$('featured-item a').on('click', function(event){
-
-    event.preventDefault();
-
-    alert('Produto esgotado');
-
-})
-// console.log$($('h4').text());
-/*
-* Callback
-* Entendendo ações que começam ao termino de outra(sequencia!)
- */
-    $('featured-item:nth(1)')
-        .hide(2000, function(){
-        // este é callback
-        console.log($(rhis).find('h4').text()+ 'Esgotato')
-    })
-    .show(2000, function(){
-        console.log($(rhis).find('h4').text()+ 'Em Estoque')
-    })
-
+            $(this).css({
+                'color' : '#f00',
+                'background' : '#ff0',
+                'font-weight' : '100',
+            });
+    
+    });
     /*
-     * Animação
-     */
-    const duracao = 1000 // equivalente a 1 segundo
-    $('featured-item:nth(0)')
-        .hide(duracao)
-        .show(duracao)
-        .fadeOut(duracao)
-        .fadeIn(duracao)
-        .toggle(duracao)
-        .toggle(duracao)
+    * Manipulação de eventos
+    */
+    $('featured-item a').on('click', function(event){
 
-    $('#form-submit').on('click', function(e){
+        event.preventDefault();
 
-        e.preventDefault()
-
-        if($('#email').val() !=''){
-            $('#email').animate({
-                opacity: "toggle",
-                top:"-50"
-            }, 500, function(){
-                console.log($(this).val())
-            })
-        }
+        alert('Produto esgotado');
 
     });
-
-    /* 
-    * Ouvinte de eventos .nav-modal-open
+    // console.log$($('h4').text());
+    /*
+    * Callback
+    * Entendendo ações que começam ao termino de outra(sequencia!)
     */
-   $('nav-modal-open').on('click', function(){
+        $('featured-item:nth(1)')
+            .hide(2000, function(){
+            // este é callback
+            console.log($(rhis).find('h4').text()+ 'Esgotato')
+        })
+        .show(2000, function(){
+            console.log($(rhis).find('h4').text()+ 'Em Estoque')
+        });
 
+        /*
+        * Animação
+        */
+        const duracao = 1000 // equivalente a 1 segundo
+        $('featured-item:nth(0)')
+            .hide(duracao)
+            .show(duracao)
+            .fadeOut(duracao)
+            .fadeIn(duracao)
+            .toggle(duracao)
+            .toggle(duracao)
+
+        $('#form-submit').on('click', function(e){
+
+            e.preventDefault()
+
+            if($('#email').val() !=''){
+
+                $('#email').animate({
+                    opacity: "toggle",
+                    top:"-50"
+                }, 500, function(){
+                    console.log($(this).val())
+                })
+            }
+
+        });
+
+        /* 
+        * Ouvinte de eventos .nav-modal-open
+        */
+    $('.nav-modal-open').on('click', function(e){
+
+            e.preventDefault()
+
+            let elem = $(this).attr('rel')
+
+            $('.modal-body').html($('#'+elem).html())
+            $('.modal-header h5.modal-title').html($(this).text())
+
+            let myModal = new bootstrap.Modal($('#modalId'))
+
+            myModal.show()
+
+    })
+
+   /* 
+    * Validação do formulario
+    */
+    function validate(elem){
+        if(elem.val() == ''){
+            console.log('O campo de'+ elem.attr('name')+'é obrigatorio')
+            elem.parent().fin('text-muted').show()
+            elem.addClass('invalid')
+
+            return false
+        }else{
+            elem.parent().find('.text-muted').hide()
+            elem.removeClass('invalid')
+        }
+    }
+    $('body').on('submit', '.modal-body .form', function(e){
         e.preventDefault()
+        const inputName = $('#name')
+        const inputEmail = $('#email')
 
-        let elem = $(this).attr('rel')
+        validate(inputName)
+        validate(inputEmail)
 
-        $('.modal-body').html($('#'+elem).html())
-        $('.modal-header h5 w.modal-title').html($(this).text())
+        if(inputEmail.hasClass('invalid') || inputName.hasClass('invalid')){
+            console.log('Verificar campos Obrigatorios')
+            return false
+        }else{
+            $(this).submit()
+        }
+    })
 
-        let myModal = new bootstrap.Modal($('#modalId'))
-
-        myModal.show()
-
-   })
+    $('body').on('blur', '#nome', function(){
+        validate($(this))
+    })
+    $('body').on('blur', '#email', function(){
+        validate($(this))
+    })
+    $('body').on('blur', '#date', function(){
+        $(this).datepicker()
+    })
+    $('body').on('blur', '#date', function(){
+        $(this).mask('00/00/0000')
+    })
+    $('body').on('blur', '#hora', function(){
+        validate($(this))
+        $(this).mask('00:00')
+    })
+    $('body').on('keyup', '#cep', function(){
+        validate($(this))
+        $(this).mask('00000-000')
+    })
+    $('body').on('keyup', '#cel', function(){
+        validate($(this))
+        $(this).mask('00000-0000')
+    })
+    $('body').on('keyup', '#cpf', function(){
+        validate($(this))
+        $(this).mask('000.000.000-00')
+    })
