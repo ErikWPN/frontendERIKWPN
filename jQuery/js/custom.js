@@ -101,13 +101,19 @@ $(document).ready(function(){
 
     })
 
+    
+
    /* 
     * Validação do formulario
     */
+
+
     function validate(elem){
         if(elem.val() == ''){
-            console.log('O campo de'+ elem.attr('name')+'é obrigatorio')
-            elem.parent().fin('text-muted').show()
+            console.log('O campo de'+ elem.attr('name') + 'é obrigatorio')
+
+            elem.parent().find('.text-muted').show()
+
             elem.addClass('invalid')
 
             return false
@@ -118,6 +124,7 @@ $(document).ready(function(){
     }
     $('body').on('submit', '.modal-body .form', function(e){
         e.preventDefault()
+
         const inputName = $('#name')
         const inputEmail = $('#email')
 
@@ -132,10 +139,15 @@ $(document).ready(function(){
         }
     })
 
+    /*
+    * JquaryMask
+    */
+
+
     $('body').on('blur', '#nome', function(){
         validate($(this))
     })
-    $('body').on('blur', '#email', function(){
+    $('body').on('blur', '#e-mail', function(){
         validate($(this))
     })
     $('body').on('blur', '#date', function(){
@@ -154,7 +166,7 @@ $(document).ready(function(){
     })
     $('body').on('keyup', '#cel', function(){
         validate($(this))
-        $(this).mask('00000-0000')
+        $(this).mask('(00)00000-0000')
     })
     $('body').on('keyup', '#cpf', function(){
         validate($(this))

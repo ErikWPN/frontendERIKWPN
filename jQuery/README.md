@@ -50,10 +50,63 @@
 Exemplo:
 
 ´´´
-$('.featured-item').mouseenter(function(){
-    console.log($(this).find('h4).text());
-});
+    $('.featured-item').mouseenter(function(){
+        console.log($(this).find('h4).text());
+    });
 
 ´´´
 - (+'-'+) > para adicionar um espaço entre um elemento e outro
 - bluer > ação dominada apos tirar o mouse do elemento
+
+### Validação com .Elem
+
+´´´
+function validate(elem){
+        if(elem.val() == ''){
+            console.log('O campo de'+ elem.attr('name')+'é obrigatorio')
+            elem.parent().fin('text-muted').show()
+            elem.addClass('invalid')
+
+            return false
+        }else{
+            elem.parent().find('.text-muted').hide()
+            elem.removeClass('invalid')
+        }
+    }
+    $('body').on('submit', '.modal-body .form', function(e){
+        e.preventDefault()
+        const inputName = $('#name')
+        const inputEmail = $('#email')
+
+        validate(inputName)
+        validate(inputEmail)
+
+        if(inputEmail.hasClass('invalid') || inputName.hasClass('invalid')){
+            console.log('Verificar campos Obrigatorios')
+            return false
+        }else{
+            $(this).submit()
+        }
+    })
+
+´´´
+
+´´´
+    $('.form').on('submit', function(e){
+                e.preventDefault()
+
+                const name = $('.#nome').val()
+                const email = $('.#email').val()
+
+                if(inputName.val() == '') {
+
+                    console.log('Os campos obrigatórios estão vazios')
+
+                    $('#inputName').addClass('invalid')
+
+                    return false
+                }
+
+            })
+
+´´´
