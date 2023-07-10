@@ -2,7 +2,7 @@
 // jQuery( function ($){
 $(document).ready(function(){
 
-    $('.olw-carousel').owlCaroseul();
+    $('.owl-carousel').owlCarousel();
 
     let titulso = $('h4') // tag
     
